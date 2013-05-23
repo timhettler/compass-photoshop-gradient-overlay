@@ -54,7 +54,7 @@ Complex gradient:
 ```scss
 .complex-gradient {
   @include background-image(
-    photoshop-linear-gradient( 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
+    photoshop-linear-gradient( #fff, normal, 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
   );
 }
 ```

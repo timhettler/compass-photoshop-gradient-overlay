@@ -32,7 +32,7 @@ photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], 
 
 `$gradient-stops` (optional, List) A list of stop locations in the gradient. Defaults to (0% to 100%).
 
-### Examples
+### Code Samples
 
 Simple gradient using default parameters:
 
@@ -65,3 +65,5 @@ Complex gradient:
   …
 }
 ```
+
+More examples can be found here: http://timhettler.github.io/compass-photoshop-gradient-overlay/

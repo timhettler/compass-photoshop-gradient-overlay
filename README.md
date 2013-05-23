@@ -38,17 +38,13 @@ Simple gradient using default parameters:
 
 ```scss
 .simple-gradient {
-  @include background-image(
-    photoshop-linear-gradient()
-  );
+  @include background-image( photoshop-linear-gradient() );
 }
 ```
 
 ```css
 .simple-gradient {
-  background-image: -webkit-linear-gradient(
-    bottom, #000000 0%, #ffffff 100%
-  );
+  background-image: -webkit-linear-gradient( bottom, #000000 0%, #ffffff 100% );
   &hellip;
 }
 ```
@@ -58,18 +54,14 @@ Complex gradient:
 ```scss
 .complex-gradient {
   @include background-image(
-    photoshop-linear-gradient(
-      75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% )
-    )
+    photoshop-linear-gradient( 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
   );
 }
 ```
 
 ```css
 .complex-gradient {
-  background-image: -webkit-linear-gradient(
-    left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75%
-  );
+  background-image: -webkit-linear-gradient( left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75% );
   &hellip;
 }
 ```

@@ -45,7 +45,7 @@ Simple gradient using default parameters:
 ```css
 .simple-gradient {
   background-image: -webkit-linear-gradient( bottom, #000000 0%, #ffffff 100% );
-  &hellip;
+  …
 }
 ```
 
@@ -62,6 +62,6 @@ Complex gradient:
 ```css
 .complex-gradient {
   background-image: -webkit-linear-gradient( left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75% );
-  &hellip;
+  …
 }
 ```

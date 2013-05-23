@@ -42,9 +42,9 @@ body {
   @include background-image(photoshop-gradient-overlay($bg-color: #fff, $angle: 180deg));
 }
 
-.gradient--angle---90{
+.gradient--angle--270{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $angle: 90deg));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $angle: 270deg));
 }
 
 // Scale

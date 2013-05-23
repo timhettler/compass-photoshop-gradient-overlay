@@ -1,0 +1,57 @@
+@import "photoshop-blend-modes";
+
+// Photoshop Gradient Overlay
+// --------------------------
+@function photoshop-gradient-overlay(
+                            $bg-color,
+                            $blend: normal,
+                            $opacity: 100%,
+                            $angle: 90deg,
+                            $scale: 100%,
+                            $gradient-colors: (#000, #fff),
+                            $gradient-stops: (0%, 100%)
+                          ) {
+
+    $css-angle: convert-angle($angle);
+    $color-stops: ();
+
+    @for $i from 1 through length($gradient-colors) {
+        $blended-color: photoshop-blend($blend, $bg-color, nth($gradient-colors, $i), percentage-to-decimal($opacity));
+        $stop: join($blended-color, stop-scale(nth($gradient-stops, $i), $scale), space);
+        $color-stops: append($color-stops, $stop, comma);
+    }
+    @return linear-gradient($css-angle, $color-stops);
+}
+
+// Adjust the color-stops based on the scale value
+@function stop-scale($stop, $scale) {
+    $stop: percentage-to-decimal($stop);
+    $new-stop: 0;
+    $scale: percentage-to-decimal($scale);
+
+    @return $scale * $stop - (0.5 * ($scale - 1));
+}
+
+// Convert percentage units to decimal units
+@function percentage-to-decimal($percentage) {
+    @if unit($percentage) == '%' {
+        $percentage: $percentage/100%;
+    }
+    @return $percentage;
+}
+
+// Attempt to convert a Photoshop angle to a CSS keyword.
+// If a valid keyword isn't available, convert to a CSS angle (0deg = north in CSS; east in Photoshop)
+@function convert-angle($angle) {
+    @if $angle == 0 {
+        @return left;
+    } @else if $angle == 90 {
+        @return bottom;
+    } @else if $angle == 180 {
+        @return right;
+    } @else if $angle == -90 {
+        @return top;
+    } @else {
+        @return $angle - 90deg;
+    }
+}

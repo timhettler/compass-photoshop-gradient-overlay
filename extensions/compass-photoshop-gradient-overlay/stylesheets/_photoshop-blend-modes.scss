@@ -1,0 +1,142 @@
+// Photoshop-style blend modes
+// --------------------------------------------------
+
+// Blending algorithms adapted from:
+// http://jswidget.com/blog/category/image-blending-algorithm/
+
+// Explanation of blend modes taken from:;
+// https://dvcs.w3.org/hg/FXTF/rawfile/tip/compositing/index.html
+
+
+// The source color is multiplied by the destination color and replaces the destination. The resultant color is always at least as dark as either the source or destination color. Multiplying any color with black results in black. Multiplying any color with white preserves the original color.
+@function blend--multiply($background-color, $foreground-color) {
+    @return $foreground-color * $background-color / 255;
+}
+
+
+// Multiplies the complements of the backdrop and source color values, then complements the result. The result color is always at least as light as either of the two constituent colors. Screening any color with white produces white; screening with black leaves the original color unchanged. The effect is similar to projecting multiple photographic slides simultaneously onto a single screen.
+@function blend--screen($background-color, $foreground-color) {
+    @return $foreground-color + $background-color - $foreground-color * $background-color / 255;
+}
+
+
+// Multiplies or screens the colors, depending on the backdrop color value. Source colors overlay the backdrop while preserving its highlights and shadows. The backdrop color is not replaced but is mixed with the source color to reflect the lightness or darkness of the backdrop.
+@function blend--overlay($background-color, $foreground-color) {
+    @return if($background-color < 128, 2 * $foreground-color * $background-color / 255, 255 - 2 * (255 - $foreground-color) * (255 - $background-color) / 255);
+}
+
+
+// Darkens or lightens the colors, depending on the source color value. The effect is similar to shining a diffused spotlight on the backdrop.
+@function blend--soft-light($v1, $v2) {
+    @return if($v1 > 127.5, $v2 + (255 - $v2) * (($v1 - 127.5) / 127.5) * (0.5 - abs($v2-127.5)/255), $v2 - $v2 * ((127.5 -  $v1) / 127.5) * (0.5 - abs($v2-127.5)/255));
+}
+
+
+// Multiplies or screens the colors, depending on the source color value. The effect is similar to shining a harsh spotlight on the backdrop.
+@function blend--hard-light($v1, $v2) {
+    @return if($v1 > 127.5, $v2 + (255 - $v2) * (($v1 - 127.5) / 127.5), $v2 * $v1 / 127.5);
+}
+
+// Linear Color Dodge
+@function blend--linear-color-dodge($v1, $v2) {
+    @return min($v1 + $v2, 255);
+}
+
+
+// Linear Color Burn
+@function blend--linear-color-burn($v1, $v2) {
+    @return if($v1 + $v2 < 255, 0, $v1 + $v2 - 255);
+}
+
+
+// Selects the darker of the backdrop and source colors. The backdrop is replaced with the source where the source is darker; otherwise, it is left unchanged.
+@function blend--darken($v1, $v2) {
+    @return min($v1,$v2);
+}
+
+
+// Selects the lighter of the backdrop and source colors. The backdrop is replaced with the source where the source is lighter; otherwise, it is left unchanged.
+@function blend--lighten($v1, $v2) {
+    @return max($v1,$v2);
+}
+
+
+// Subtracts the darker of the two constituent colors from the lighter color. Painting with white inverts the backdrop color; painting with black produces no change.
+@function blend--difference($v1, $v2) {
+    @return abs($v1 - $v2);
+}
+
+
+// Produces an effect similar to that of the Difference mode but lower in contrast. Painting with white inverts the backdrop color; painting with black produces no change.
+@function blend--exclusion($v1, $v2) {
+    @return $v1 + $v2 - $v1 * $v2 / 127.5;
+}
+
+
+// Reflex
+@function blend--reflex($v1, $v2) {
+    @return if($v1 == 255, $v1, min(255, ($v2 * $v2 / (255 - $v1))));
+}
+
+
+// Linear Light
+@function blend--linear-light($v1, $v2) {
+    @return if($v1 < 128, blend--linear-burn($v2, (2 * $v1)), blend--linear-dodge($v2, (2 * ($v1 - 128))));
+}
+
+
+// Pin Light
+@function blend--pin-light($v1, $v2) {
+    @return if($v1 < 128, blend--darken($v2, (2 * $v1)), blend--lighten($v2, (2 * ($v1 - 128))));
+}
+
+
+// Vivid Light
+@function blend--vivid-light($v1, $v2) {
+    @return if($v1 < 128, blend--color-burn($v2, (2 * $v1)), blend--color-dodge($v2, (2 * ($v1 - 128))));
+}
+
+
+// Hard Mix
+@function blend--hard-mix($v1, $v2) {
+    @return if(blend--vivid-light($v1,$v2) < 128, 0, 255);
+}
+
+
+// Mix two colors together
+@function photoshop-blend($mode, $background-color, $foreground-color, $alpha:1) {
+    $red1: red($background-color);
+    $green1: green($background-color);
+    $blue1: blue($background-color);
+    $red2: red($foreground-color);
+    $green2: green($foreground-color);
+    $blue2: blue($foreground-color);
+
+    @if(unquote($mode) == multiply) {
+        @return rgba(
+                    blend--multiply($red1, $red2),
+                    blend--multiply($green1, $green2),
+                    blend--multiply($blue1, $blue2),
+                    $alpha
+                );
+    } @else if(unquote($mode) == screen) {
+        @return rgba(
+                    blend--screen($red1, $red2),
+                    blend--screen($green1, $green2),
+                    blend--screen($blue1, $blue2),
+                    $alpha
+                );
+    } @else if(unquote($mode) == overlay) {
+        @return rgba(
+                    blend--overlay($red1, $red2),
+                    blend--overlay($green1, $green2),
+                    blend--overlay($blue1, $blue2),
+                    $alpha
+                );
+    } @else {
+        @return rgba(
+                    $foreground-color,
+                    $alpha
+                );
+    }
+}

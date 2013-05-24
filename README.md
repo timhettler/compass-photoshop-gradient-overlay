@@ -30,7 +30,11 @@ Then run this command from the root of your project:
   compass create my_project -r compass-photoshop-gradent-overlay --using compass-photoshop-gradent-overlay
   ```
 
-By default, the extension doesn't add
+By default, the extension doesn't add any files to your project. An example scss and html file can be imported by installing the "example" pattern:
+
+  ```
+  compass install compass-photoshop-gradent-overlay/example
+  ```
 
 # Usage
 

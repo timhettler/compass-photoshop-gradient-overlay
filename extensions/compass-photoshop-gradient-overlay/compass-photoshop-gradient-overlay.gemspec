@@ -2,8 +2,8 @@ require './lib/compass-photoshop-gradient-overlay'
 
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "1.0.0"
-  s.date = "2013-05-23"
+  s.version = "1.1.0"
+  s.date = "2013-05-24"
 
   # Gem Details
   s.name = "compass-photoshop-gradient-overlay"

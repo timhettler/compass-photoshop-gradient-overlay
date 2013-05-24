@@ -73,12 +73,12 @@ body {
 
 .gradient--stops--3{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, orange, yellow ), $gradient-stops: ( 0%, 50%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, green, blue ), $gradient-stops: ( 0%, 50%, 100% )));
 }
 
 .gradient--stops--4{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, orange, yellow, green ), $gradient-stops: ( 0%, 33.3333%, 66.6666%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, yellow, green, blue ), $gradient-stops: ( 0%, 33.3333%, 66.6666%, 100% )));
 }
 
 .gradient--stops--5{

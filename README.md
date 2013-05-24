@@ -2,19 +2,45 @@ A compass extension to translate between Photoshop gradient overlays and CSS lin
 
 Blend mode translation is also included with this Compass extension.
 
+# Installation
+
+## Install the Ruby Gem.
+
+  ```
+  gem install compass-photoshop-gradent-overlay
+  ```
+
+### Install into an existing project
+
+Edit the project configuration file (`config.rb`) and add:
+
+  ```ruby
+  require 'compass-photoshop-gradent-overlay'
+  ```
+
+Then run this command from the root of your project:
+
+  ```
+  compass install compass-photoshop-gradent-overlay
+  ```
+
+### When creating a new project:
+
+  ```
+  compass create my_project -r compass-photoshop-gradent-overlay --using compass-photoshop-gradent-overlay
+  ```
+
 # Usage
 
-
-```scss
-@import 'photoshop-gradent-overlay';
-```
+  ```scss
+  @import 'photoshop-gradent-overlay';
+  ```
 
 ## Function Reference
 
-
-```scss
-photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$gradient-colors], [$gradient-stops] )
-```
+  ```scss
+  photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$gradient-colors], [$gradient-stops] )
+  ```
 
 ### Function Parameters
 
@@ -36,35 +62,35 @@ photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], 
 
 Simple gradient using default parameters:
 
-```scss
-.simple-gradient {
-  @include background-image( photoshop-linear-gradient() );
-}
-```
+  ```scss
+  .simple-gradient {
+    @include background-image( photoshop-linear-gradient() );
+  }
+  ```
 
-```css
-.simple-gradient {
-  background-image: -webkit-linear-gradient( bottom, #000000 0%, #ffffff 100% );
-  …
-}
-```
+  ```css
+  .simple-gradient {
+    background-image: -webkit-linear-gradient( bottom, #000000 0%, #ffffff 100% );
+    …
+  }
+  ```
 
 Complex gradient:
 
-```scss
-.complex-gradient {
-  @include background-image(
-    photoshop-linear-gradient( #fff, normal, 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
-  );
-}
+  ```scss
+  .complex-gradient {
+    @include background-image(
+      photoshop-linear-gradient( #fff, normal, 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
+    );
+  }
 ```
 
-```css
-.complex-gradient {
-  background-image: -webkit-linear-gradient( left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75% );
-  …
-}
-```
+  ```css
+  .complex-gradient {
+    background-image: -webkit-linear-gradient( left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75% );
+    …
+  }
+  ```
 
 ### Demo
 

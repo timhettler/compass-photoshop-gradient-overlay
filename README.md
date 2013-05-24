@@ -66,4 +66,6 @@ Complex gradient:
 }
 ```
 
+### Demo
+
 More examples can be found here: http://timhettler.github.io/compass-photoshop-gradient-overlay/

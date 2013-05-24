@@ -105,38 +105,130 @@
 
 // Mix two colors together
 @function photoshop-blend($mode, $background-color, $foreground-color, $alpha:1) {
-    $red1: red($background-color);
-    $green1: green($background-color);
-    $blue1: blue($background-color);
-    $red2: red($foreground-color);
-    $green2: green($foreground-color);
-    $blue2: blue($foreground-color);
+  $mode: unquote($mode);
+  $red1: red($background-color);
+  $green1: green($background-color);
+  $blue1: blue($background-color);
+  $red2: red($foreground-color);
+  $green2: green($foreground-color);
+  $blue2: blue($foreground-color);
 
-    @if(unquote($mode) == multiply) {
-        @return rgba(
-                    blend--multiply($red1, $red2),
-                    blend--multiply($green1, $green2),
-                    blend--multiply($blue1, $blue2),
-                    $alpha
-                );
-    } @else if(unquote($mode) == screen) {
-        @return rgba(
-                    blend--screen($red1, $red2),
-                    blend--screen($green1, $green2),
-                    blend--screen($blue1, $blue2),
-                    $alpha
-                );
-    } @else if(unquote($mode) == overlay) {
-        @return rgba(
-                    blend--overlay($red1, $red2),
-                    blend--overlay($green1, $green2),
-                    blend--overlay($blue1, $blue2),
-                    $alpha
-                );
-    } @else {
-        @return rgba(
-                    $foreground-color,
-                    $alpha
-                );
-    }
+  @if($mode == multiply) {
+    @return rgba(
+                blend--multiply($red1, $red2),
+                blend--multiply($green1, $green2),
+                blend--multiply($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == screen) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == overlay) {
+    @return rgba(
+                blend--overlay($red1, $red2),
+                blend--overlay($green1, $green2),
+                blend--overlay($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == soft-light) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == hard-light) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == linear-color-dodge) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == linear-color-burn) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == linear-lighten) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == linear-darken) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == difference) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == exclusion) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == reflex) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == linear-light) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == pin-light) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == vivid-light) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else if($mode == hard-mix) {
+    @return rgba(
+                blend--screen($red1, $red2),
+                blend--screen($green1, $green2),
+                blend--screen($blue1, $blue2),
+                $alpha
+            );
+  } @else {
+    @return rgba(
+                $foreground-color,
+                $alpha
+            );
+  }
 }

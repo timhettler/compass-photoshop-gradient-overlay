@@ -10,7 +10,7 @@ Blend mode translation is also included with this Compass extension.
   gem install compass-photoshop-gradent-overlay
   ```
 
-### Install into an existing project
+### Install into an existing project:
 
 Edit the project configuration file (`config.rb`) and add:
 

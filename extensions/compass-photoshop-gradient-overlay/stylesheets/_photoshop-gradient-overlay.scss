@@ -26,7 +26,6 @@
 // Adjust the color-stops based on the scale value
 @function stop-scale($stop, $scale) {
     $stop: percentage-to-decimal($stop);
-    $new-stop: 0;
     $scale: percentage-to-decimal($scale);
 
     @return $scale * $stop - (0.5 * ($scale - 1));

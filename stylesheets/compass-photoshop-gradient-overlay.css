@@ -1,0 +1,107 @@
+/* line 4, ../sass/compass-photoshop-gradient-overlay.scss */
+body {
+  font-family: Helvetica;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* line 10, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--angle--0, .gradient--angle--90, .gradient--angle--180, .gradient--angle--270, .gradient--scale--50, .gradient--scale--75, .gradient--scale--125, .gradient--scale--150, .gradient--stops--3, .gradient--stops--4, .gradient--stops--5, .gradient--stops--6 {
+  color: #fff;
+  height: 300px;
+  line-height: 300px;
+  width: 300px;
+  text-shadow: 0 0.1em rgba(0, 0, 0, 0.4);
+}
+
+/* line 18, ../sass/compass-photoshop-gradient-overlay.scss */
+.group {
+  *zoom: 1;
+  margin: 1em auto;
+}
+/* line 18, ../bourbon/addons/_clearfix.scss */
+.group:before, .group:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../bourbon/addons/_clearfix.scss */
+.group:after {
+  clear: both;
+}
+/* line 22, ../sass/compass-photoshop-gradient-overlay.scss */
+.group .group-item {
+  float: left;
+  width: 25%;
+}
+
+/* line 30, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--angle--0 {
+  background-image: -webkit-linear-gradient(-180deg, black 0, white 1);
+  background-image: linear-gradient(-90deg, black 0, white 1);
+}
+
+/* line 35, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--angle--90 {
+  background-image: -webkit-linear-gradient(-270deg, black 0, white 1);
+  background-image: linear-gradient(0deg, black 0, white 1);
+}
+
+/* line 40, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--angle--180 {
+  background-image: -webkit-linear-gradient(-360deg, black 0, white 1);
+  background-image: linear-gradient(90deg, black 0, white 1);
+}
+
+/* line 45, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--angle--270 {
+  background-image: -webkit-linear-gradient(-450deg, black 0, white 1);
+  background-image: linear-gradient(180deg, black 0, white 1);
+}
+
+/* line 52, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--scale--50 {
+  background-image: -webkit-linear-gradient(-270deg, black 0.25, white 0.75);
+  background-image: linear-gradient(0deg, black 0.25, white 0.75);
+}
+
+/* line 57, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--scale--75 {
+  background-image: -webkit-linear-gradient(-270deg, black 0.125, white 0.875);
+  background-image: linear-gradient(0deg, black 0.125, white 0.875);
+}
+
+/* line 62, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--scale--125 {
+  background-image: -webkit-linear-gradient(-270deg, black -0.125, white 1.125);
+  background-image: linear-gradient(0deg, black -0.125, white 1.125);
+}
+
+/* line 67, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--scale--150 {
+  background-image: -webkit-linear-gradient(-270deg, black -0.25, white 1.25);
+  background-image: linear-gradient(0deg, black -0.25, white 1.25);
+}
+
+/* line 74, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--stops--3 {
+  background-image: -webkit-linear-gradient(-270deg, red 0, green 0.5, blue 1);
+  background-image: linear-gradient(0deg, red 0, green 0.5, blue 1);
+}
+
+/* line 79, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--stops--4 {
+  background-image: -webkit-linear-gradient(-270deg, red 0, yellow 0.33333, green 0.66667, blue 1);
+  background-image: linear-gradient(0deg, red 0, yellow 0.33333, green 0.66667, blue 1);
+}
+
+/* line 84, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--stops--5 {
+  background-image: -webkit-linear-gradient(-270deg, red 0, orange 0.25, yellow 0.5, green 0.75, blue 1);
+  background-image: linear-gradient(0deg, red 0, orange 0.25, yellow 0.5, green 0.75, blue 1);
+}
+
+/* line 89, ../sass/compass-photoshop-gradient-overlay.scss */
+.gradient--stops--6 {
+  background-image: -webkit-linear-gradient(-270deg, red 0, orange 0.2, yellow 0.4, green 0.6, blue 0.8, violet 1);
+  background-image: linear-gradient(0deg, red 0, orange 0.2, yellow 0.4, green 0.6, blue 0.8, violet 1);
+}

@@ -4,7 +4,7 @@ Blend mode translation is also included with this Compass extension.
 
 This code is bundled as a Compass extension, but is also compatible with Boubon.
 
-# Installation
+# Compass Extension Installation
 
 ## Install the Ruby Gem.
 

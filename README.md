@@ -9,7 +9,7 @@ This code is bundled as a Compass extension simply for ease of installation. It 
 ## Install the Ruby Gem.
 
   ```
-  gem install compass-photoshop-gradent-overlay
+  gem install compass-photoshop-gradient-overlay
   ```
 
 ### Install into an existing project:
@@ -17,37 +17,41 @@ This code is bundled as a Compass extension simply for ease of installation. It 
 Edit the project configuration file (`config.rb`) and add:
 
   ```ruby
-  require 'compass-photoshop-gradent-overlay'
+  require 'compass-photoshop-gradient-overlay'
   ```
 
 Then run this command from the root of your project:
 
   ```
-  compass install compass-photoshop-gradent-overlay
+  compass install compass-photoshop-gradient-overlay
   ```
 
 ### When creating a new project:
 
   ```
-  compass create my_project -r compass-photoshop-gradent-overlay --using compass-photoshop-gradent-overlay
+  compass create my_project -r compass-photoshop-gradient-overlay --using compass-photoshop-gradient-overlay
   ```
 
 By default, the extension doesn't add any files to your project. An example scss and html file can be imported by installing the "example" pattern:
 
   ```
-  compass install compass-photoshop-gradent-overlay/example
+  compass install compass-photoshop-gradient-overlay/example
   ```
 
 # Usage
 
   ```scss
-  @import 'photoshop-gradent-overlay';
+  @import 'photoshop-gradient-overlay';
   ```
 
 ## Function Reference
 
   ```scss
+<<<<<<< HEAD
   photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$color-stops] )
+=======
+  photoshop-gradient-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$gradient-colors], [$gradient-stops] )
+>>>>>>> ec1a692d1f35a0ad262ad6c448b522cf34ade417
   ```
 
 ### Function Parameters

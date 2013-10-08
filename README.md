@@ -2,7 +2,7 @@ A compass extension to translate between Photoshop gradient overlays and CSS lin
 
 Blend mode translation is also included with this Compass extension.
 
-This code is bundled as a Compass extension simply for ease of installation. It actually has no Compass dependencies, so you can use this library in a non-Compass-based project.
+This code is bundled as a Compass extension, but is also compatible with Boubon.
 
 # Installation
 

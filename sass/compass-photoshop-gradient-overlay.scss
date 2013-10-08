@@ -73,20 +73,20 @@ body {
 
 .gradient--stops--3{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, green, blue ), $gradient-stops: ( 0%, 50%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $color-stops: ( red 0%, green 50%, blue 100% )));
 }
 
 .gradient--stops--4{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, yellow, green, blue ), $gradient-stops: ( 0%, 33.3333%, 66.6666%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $color-stops: ( red 0%, yellow 33.3333%, green 66.6666%, blue 100% )));
 }
 
 .gradient--stops--5{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, orange, yellow, green, blue ), $gradient-stops: ( 0%, 25%, 50%, 75%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $color-stops: ( red 0%, orange 25%, yellow 50%, green 75%, blue 100% )));
 }
 
 .gradient--stops--6{
   @extend %gradient-example;
-  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $gradient-colors: ( red, orange, yellow, green, blue, violet ), $gradient-stops: ( 0%, 20%, 40%, 60%, 80%, 100% )));
+  @include background-image(photoshop-gradient-overlay($bg-color: #fff, $color-stops: ( red 0%, orange 20%, yellow 40%, green 60%, blue 80%, violet 100% )));
 }

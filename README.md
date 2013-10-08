@@ -2,6 +2,8 @@ A compass extension to translate between Photoshop gradient overlays and CSS lin
 
 Blend mode translation is also included with this Compass extension.
 
+This code is bundled as a Compass extension simply for ease of installation. It actually has no Compass dependencies, so you can use this library in a non-Compass-based project.
+
 # Installation
 
 ## Install the Ruby Gem.
@@ -45,7 +47,7 @@ By default, the extension doesn't add any files to your project. An example scss
 ## Function Reference
 
   ```scss
-  photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$gradient-colors], [$gradient-stops] )
+  photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$color-stops] )
   ```
 
 ### Function Parameters
@@ -60,9 +62,7 @@ By default, the extension doesn't add any files to your project. An example scss
 
 `$scale` (optional, Percentage) The size of the overlay. Defaults to 100%.
 
-`$gradient-colors` (optional, List) A list of color stops in the gradient. Defaults to (#000, #fff).
-
-`$gradient-stops` (optional, List) A list of stop locations in the gradient. Defaults to (0% to 100%).
+`$color-stops` (optional, List) A list of stop color & locations in the gradient. Defaults to (#000 0%, #fff 100%).
 
 ### Code Samples
 
@@ -70,13 +70,13 @@ Simple gradient using default parameters:
 
   ```scss
   .simple-gradient {
-    @include background-image( photoshop-linear-gradient() );
+    @include background-image( photoshop-gradient-overlay(white) );
   }
   ```
 
   ```css
   .simple-gradient {
-    background-image: -webkit-linear-gradient( bottom, #000000 0%, #ffffff 100% );
+    background-image: linear-gradient(0deg, #000000 0%, #ffffff 100%);
     …
   }
   ```
@@ -86,14 +86,14 @@ Complex gradient:
   ```scss
   .complex-gradient {
     @include background-image(
-      photoshop-linear-gradient( #fff, normal, 75%, 0deg, 50%, ( red, orange, yellow, green, blue, violet ), ( 0%, 20%, 40%, 60%, 80%, 100% ) )
+      photoshop-gradient-overlay( #fff, normal, 75%, 0deg, 50%, ( red 0%, orange 20%, yellow 40%, green 60%, blue 80%, violet 100% ) )
     );
   }
 ```
 
   ```css
   .complex-gradient {
-    background-image: -webkit-linear-gradient( left, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%,rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75% );
+    background-image: linear-gradient(-90deg, rgba(255, 0, 0, 0.75) 25%, rgba(255, 165, 0, 0.75) 35%, rgba(255, 255, 0, 0.75) 45%, rgba(0, 128, 0, 0.75) 55.0%, rgba(0, 0, 255, 0.75) 65%, rgba(238, 130, 238, 0.75) 75%);
     …
   }
   ```

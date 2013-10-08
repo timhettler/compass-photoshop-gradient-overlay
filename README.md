@@ -47,11 +47,7 @@ By default, the extension doesn't add any files to your project. An example scss
 ## Function Reference
 
   ```scss
-<<<<<<< HEAD
   photoshop-gradent-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$color-stops] )
-=======
-  photoshop-gradient-overlay( $bg-color, [$blend], [$opacity], [$angle], [$scale], [$gradient-colors], [$gradient-stops] )
->>>>>>> ec1a692d1f35a0ad262ad6c448b522cf34ade417
   ```
 
 ### Function Parameters

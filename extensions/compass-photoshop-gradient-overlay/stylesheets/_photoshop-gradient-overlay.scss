@@ -35,7 +35,7 @@ $gradient-overlay-color-stops: (#000 0%, #fff 100%) !default;
     $stop: percentage-to-decimal($stop);
     $scale: percentage-to-decimal($scale);
 
-    @return $scale * $stop - (0.5 * ($scale - 1));
+    @return percentage($scale * $stop - (0.5 * ($scale - 1)));
 }
 
 // Convert percentage units to decimal units

@@ -1,0 +1,5 @@
+{
+  "name": "PhotoShop Gradient Overlay",
+  "description": "Translate between Photoshop gradient overlays and CSS linear-gradients.",
+  "tags": ["color", "gradients", "PhotoShop", "compass", "bourbon"]
+}

@@ -54,7 +54,7 @@ By default, the extension doesn't add any files to your project. An example scss
 
 `$bg-color` (required, Color) The background color of the element.
 
-`$blend` (optional, String) The blend mode used to mix the gradient and the backgorund-color. Defaults to "normal" (no blending).
+`$blend` (optional, String) The blend mode used to mix the gradient and the background-color. Defaults to "normal" (no blending).
 
 `$opacity` (optional, Percentage) The strength of the overlay. Accepts values between 0% & 100%. Defaults to 100%.
 
